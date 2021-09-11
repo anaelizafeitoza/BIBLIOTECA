@@ -6,13 +6,13 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-		giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-		<title>Leitores - Consulta</title>
+		<title>Pessoas - Consulta</title>
 	</head>
 
   	<body>
 		<div class="container">
 			<header class="bg-primary text-white text-center">
-				<h1> Sistema WEB para Compra de Livros</h1>
+				<h1> Sistema WEB para Adoção de Animais</h1>
 			</header>
 
 			<hr>
@@ -41,20 +41,33 @@
 
 			<hr>
 
-			<form method="POST" action="consultar_pessoa_bd.php">
-				<label for="pessoaEscolhida" class="form-label">Escolha qual leitor você deseja consultar do banco de dados: </label>
+			<form method="POST" action="#">
+				<label for="pessoaEscolhida" class="form-label">Escolha qual pessoa você deseja consultar do banco de dados: </label>
 				<select class="form-select" id="pessoaEscolhida" name="pessoaEscolhida">
-					<option> Inês </option>
-					<option> Maria </option>
-					<option> Pedro Henrique </option>
-					<option> Sophia </option>
+					<?php
+						require_once "model/pessoa.php";
+						$pessoas = selecionarTodasPessoas();
+						foreach ($pessoas as $p)
+						{
+							echo "<option value = $p->id>" . $p->nome . "</option>";	
+						}
+					?>
 				</select><br>
-				<button type="submit" class="btn btn-primary">Consultar dados do leitor </button>
+				<button type="submit" class="btn btn-primary">Consultar dados da pessoa </button>
 			</form>
 			
+			<?php
+				if (isset($_POST["pessoaEscolhida"]))
+				{
+					require_once "model/pessoa.php";
+					$pessoa = selecionarPessoaId($_POST["pessoaEscolhida"]);
+					echo "Nome: " . $pessoa->nome . "<br>";
+					echo "Endereço: " . $pessoa->endereco . "<br>";
+					echo "Preferências: " . $pessoa->preferencias . "<br>";
+				}
+			?>
 
 			<hr>
-
 
 			<footer class="bg-primary text-white text-center">
 				<h6>Desenvolvido por: Matheus Guedes Vilas Boas</h6>
@@ -64,4 +77,5 @@
  
   	</body>
 </html>
+ 
  

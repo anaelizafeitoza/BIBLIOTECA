@@ -39,7 +39,6 @@
 				</div>
 			</div>
 
-
 			<hr>
 
 				<form method="POST" action="validacao_livros.php">

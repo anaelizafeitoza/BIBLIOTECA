@@ -38,7 +38,6 @@
 					<a href="logout.php" class="btn btn-danger">Logout</a>
 				</div>
 			</div>
-
 			<hr>
 
 			<form method="POST" action="atualizarLivro.php">

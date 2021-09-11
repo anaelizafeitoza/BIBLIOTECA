@@ -19,23 +19,23 @@
 			<div class="row">
 				
 				<div class="col-2">
-					<a href="index.html" class="btn btn-primary">Página Inicial</a>
+					<a href="index.php" class="btn btn-primary">Página Inicial</a>
 				</div>
 			
 				<div class="col-2">
-					<a href="quem_somos.html" class="btn btn-primary">Quem Somos</a>
+					<a href="quem_somos.php" class="btn btn-primary">Quem Somos</a>
 				</div>
 				<div class="col-2">
-					<a href="animais.html" class="btn btn-primary">Animais</a>
+					<a href="livros.php" class="btn btn-primary">Livros</a>
 				</div>
 				<div class="col-2">
-					<a href="pessoas.html" class="btn btn-primary">Pessoas</a>
+					<a href="pessoas.php" class="btn btn-primary">Pessoas</a>
 				</div>
 				<div class="col-2">
-					<a href="login.html" class="btn btn-success">Login</a>
+					<a href="login.php" class="btn btn-success">Login</a>
 				</div>
 				<div class="col-2">
-					<a href="logout.html" class="btn btn-danger">Logout</a>
+					<a href="logout.php" class="btn btn-danger">Logout</a>
 				</div>
 			</div>
 
