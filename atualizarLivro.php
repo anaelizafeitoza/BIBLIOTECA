@@ -41,7 +41,7 @@
 
 			<hr>
 
-			<form method="POST" action="#">
+			<form method="POST" action="atualizarLivro.php">
 			  <label for="livroEscolhido" class="form-label">Escolha qual livro você deseja atualizar dados no banco de dados: </label>
 			  <select class="form-select" id="livroEscolhido" name="livroEscolhido">
 			  <?php
@@ -63,14 +63,11 @@
 							$livro = selecionarLivroId($_POST["livroEscolhido"]);
 							
 						}
-						else
-						{
-							header("Location: index.html");
-						}
+						
 				?>
 
-						<form method="POST" action="validacao_livros.php">
-							<input type="hidden" id="idOculto" name="idOculto" value="<?php echo $livro->id;?>">
+						echo "<form method="POST" action="validacao_livros.php">
+							echo "<input type="hidden" id="idOculto" name="idOculto" value="<?php echo $livro->id;?>">";
 							<label for="name" class="form-label">Nome do Livro: </label>
 							<input type="text" class="form-control" id="nome" nome="nome" value = "<?php echo $livro->nome;?>">
 
