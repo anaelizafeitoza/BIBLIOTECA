@@ -41,17 +41,29 @@
 
 			<hr>
 
-			<form method="POST" action="remover_livro_bd.php">
+			<form method="POST" action="#">
 			  <label for="livroEscolhido" class="form-label">Escolha qual livro você deseja remover do banco de dados: </label>
 			  <select class="form-select" id="livroEscolhido" name="livroEscolhido">
-					<option> Romeu e Julieta </option>
-					<option> Dom Quixote </option>
-					<option> Diário de um Banana </option>
-					<option> Harry Potter </option>
+					<?php
+						require_once "model/livros.php";
+						$animais = selecionarTodosLivros();
+						foreach ($livros as $a)
+						{
+							echo "<option value = $a->id>" . $a->nome . "</option>";
+						}
+					?>
 				</select><br>
 			  <button type="submit" class="btn btn-primary">Remover livro </button>
 			</form>
-			
+			<?php
+				if (isset($_POST["livroEscolhido"]))
+				{
+					require_once "model/animal.php";
+					excluirLivro($_POST["livroEscolhido"]);
+					echo "Livro excluído com sucesso do BD!";
+					
+				}
+			?>
 
 			<hr>
 
