@@ -48,7 +48,7 @@
 
 			<footer class="bg-primary text-white text-center">
 				<h6>Desenvolvido por: Ana Eliza Feitoza e Raphael Almeida</h6>
-				<p> E-mail: matheus.vilasboas@ifsuldeminas.edu.br </p>
+				<p> IFSULDEMINAS </p>
 			</footer>
 		</div>
  

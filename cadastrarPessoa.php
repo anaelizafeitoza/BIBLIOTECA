@@ -55,9 +55,9 @@
 			
            	<hr>
 
-			<footer class="bg-primary text-white text-center">
-				<h6>Desenvolvido por: Matheus Guedes Vilas Boas</h6>
-				<p> E-mail: matheus.vilasboas@ifsuldeminas.edu.br </p>
+			   <footer class="bg-primary text-white text-center">
+				<h6>Desenvolvido por: Ana Eliza Feitoza e Raphael Almeida</h6>
+				<p> IFSULDEMINAS </p>
 			</footer>
 
             
