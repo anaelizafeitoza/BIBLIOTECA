@@ -3,7 +3,7 @@
 	function inserirCompra($idLivro, $idPessoa)
 	{
 		global $conexao;
-		$prepara = $conexao->prepare("INSERT INTO livro (idLivro, idPessoa) VALUES (?, ?)");
+		$prepara = $conexao->prepare("INSERT INTO compra (idLivro, idPessoa) VALUES (?, ?)");
 		$prepara->bind_param("ii", $idLivro, $idPessoa);
 		$prepara->execute();	
 	}

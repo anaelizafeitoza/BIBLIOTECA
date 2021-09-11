@@ -6,7 +6,7 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-		giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-		<title>Adoção - Atualização</title>
+		<title>Compra - Atualização</title>
 	</head>
 
   	<body>
@@ -80,7 +80,7 @@
 					  <select class="form-select" id="livroEscolhido" name="livroEscolhido">
 						<?php
 								require_once "model/livros.php";
-								$animais = selecionarTodosLivros();
+								$livros = selecionarTodosLivros();
 								foreach ($livros as $a)
 								{
 									echo "<option value = $a->id>" . $a->nome . "</option>";
@@ -95,7 +95,7 @@
 						{
 							require_once "model/compra.php";
 							atualizarCompra($_POST["livroEscolhido"], $_POST["pessoaEscolhida"], $_POST["compraEscolhida"]);
-							echo "Compra realizada com sucesso";
+							echo "Compra atualizada com sucesso";
 						}
 					
 			

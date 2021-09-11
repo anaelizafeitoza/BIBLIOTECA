@@ -49,7 +49,7 @@
 			  <select class="form-select" id="compraEscolhida" name="compraEscolhida">
 				<?php
 					require_once "model/compra.php";
-					$adocoes = selecionarTodasCompras();
+					$compras = selecionarTodasCompras();
 					foreach ($compras as $ad)
 					{
 						echo "<option value = $ad->id>Livro: " . $ad->anome . " - Leitor: " . $ad->pnome . "</option>";		
@@ -63,7 +63,7 @@
 				if (isset($_POST["compraEscolhida"]))
 				{
 					require_once "model/compra.php";
-					excluirAdocao($_POST["compraEscolhida"]);
+					excluirCompra($_POST["compraEscolhida"]);
 					echo "Compra excluída com sucesso do BD!";
 				} 
 			?>
@@ -71,8 +71,8 @@
 			<hr>
 
 			<footer class="bg-primary text-white text-center">
-				<h6>Desenvolvido por: Matheus Guedes Vilas Boas</h6>
-				<p> E-mail: matheus.vilasboas@ifsuldeminas.edu.br </p>
+            <h6>Desenvolvido por: Ana Eliza Feitoza e Raphael Almeida</h6>
+				<p> IFSULDEMINAS </p>
 			</footer>
 		</div>
  
