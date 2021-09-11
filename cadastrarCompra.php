@@ -6,7 +6,7 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-		giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-		<title>Animais - Remoção</title>
+		<title>Compras - Cadastro</title>
 	</head>
 
   	<body>
@@ -45,34 +45,50 @@
 			<hr>
 
 			<form method="POST" action="#">
-			  <label for="pessoaEscolhida" class="form-label">Escolha qual pessoa você deseja remover do banco de dados: </label>
-			  <select class="form-select" id="pessoaEscolhida" name="pessoaEscolhida">
+			  <label for="pessoaEscolhida" class="form-label">Escolha qual pessoa realizará a compra: </label>
+				<select class="form-select" id="pessoaEscolhida" name="pessoaEscolhida">
+					<?php
+						require_once "model/pessoa.php";
+						$pessoas = selecionarTodasPessoas();
+						foreach ($pessoas as $p)
+						{
+							echo "<option value = $p->id>" . $p->nome . "</option>";	
+						}
+					?>
+			  </select><br>
+			  <label for="livroEscolhido" class="form-label">Escolha qual livro será comprado: </label>
+			  <select class="form-select" id="livroEscolhido" name="livroEscolhido">
 				<?php
-					require_once "model/pessoa.php";
-					$pessoas = selecionarTodasPessoas();
-					foreach ($pessoas as $p)
-					{
-						echo "<option value = $p->id>" . $p->nome . "</option>";	
-					}
+						require_once "model/livros.php";
+						$animais = selecionarTodosLivros();
+						foreach ($livros as $a)
+						{
+							echo "<option value = $a->id>" . $a->nome . "</option>";
+						}
 				?>
 			  </select><br>
-			  <button type="submit" class="btn btn-primary">Remover pessoa </button>
+			  <button type="submit" class="btn btn-primary">Cadastrar compra </button>
 			</form>
 			
+			
+			
 			<?php
-				if (isset($_POST["pessoaEscolhida"]))
+				if (isset($_POST["livroEscolhido"]) and isset($_POST["pessoaEscolhida"]))
 				{
-					require_once "model/pessoa.php";
-					excluirPessoa($_POST["pessoaEscolhida"]);
-					echo "Pessoa excluída com sucesso do BD!";
+					require_once "model/compra.php";
+					inserirCompra($_POST["livroEscolhido"], $_POST["pessoaEscolhida"]);
+					echo "Compra realizada com sucesso";
 				}
 			?>
+
+
+			
 
 			<hr>
 
 			<footer class="bg-primary text-white text-center">
-				<h6>Desenvolvido por: Ana Eliza Feitoza e Raphael Almeida</h6>
-				<p> IFSULDEMINAS </p>
+				<h6>Desenvolvido por: Matheus Guedes Vilas Boas</h6>
+				<p> E-mail: matheus.vilasboas@ifsuldeminas.edu.br </p>
 			</footer>
 		</div>
  

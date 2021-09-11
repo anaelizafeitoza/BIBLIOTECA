@@ -28,6 +28,9 @@
 				</div>
 				<div class="col-2">
 					<a href="livros.php" class="btn btn-primary">Livros</a>
+                </div>
+				<div class="col-2">
+					<a href="compras.php" class="btn btn-primary">Compras</a>
 				</div>
 				<div class="col-2">
 					<a href="pessoas.php" class="btn btn-primary">Pessoas</a>

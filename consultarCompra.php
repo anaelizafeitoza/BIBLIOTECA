@@ -6,7 +6,7 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-		giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-		<title>Animais - Remoção</title>
+		<title>Adoção - Consulta</title>
 	</head>
 
   	<body>
@@ -41,40 +41,27 @@
 					<a href="logout.php" class="btn btn-danger">Logout</a>
 				</div>
 			</div>
-
 			<hr>
 
-			<form method="POST" action="#">
-			  <label for="pessoaEscolhida" class="form-label">Escolha qual pessoa você deseja remover do banco de dados: </label>
-			  <select class="form-select" id="pessoaEscolhida" name="pessoaEscolhida">
-				<?php
-					require_once "model/pessoa.php";
-					$pessoas = selecionarTodasPessoas();
-					foreach ($pessoas as $p)
-					{
-						echo "<option value = $p->id>" . $p->nome . "</option>";	
-					}
-				?>
-			  </select><br>
-			  <button type="submit" class="btn btn-primary">Remover pessoa </button>
-			</form>
-			
 			<?php
-				if (isset($_POST["pessoaEscolhida"]))
+				require_once "model/compra.php";
+				$adocoes = selecionarTodasCompras();
+				foreach ($compras as $ad)
 				{
-					require_once "model/pessoa.php";
-					excluirPessoa($_POST["pessoaEscolhida"]);
-					echo "Pessoa excluída com sucesso do BD!";
+					echo "Nome do livro: " . $ad->anome . "<br>";
+					echo "Nome do leitor: " . $ad->pnome . "<br>";
+					echo "<hr>";	
 				}
 			?>
-
+			
 			<hr>
 
 			<footer class="bg-primary text-white text-center">
-				<h6>Desenvolvido por: Ana Eliza Feitoza e Raphael Almeida</h6>
-				<p> IFSULDEMINAS </p>
+				<h6>Desenvolvido por: Matheus Guedes Vilas Boas</h6>
+				<p> E-mail: matheus.vilasboas@ifsuldeminas.edu.br </p>
 			</footer>
 		</div>
  
   	</body>
 </html>
+ 

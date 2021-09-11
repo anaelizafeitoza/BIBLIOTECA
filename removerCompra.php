@@ -6,7 +6,7 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-		giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-		<title>Animais - Remoção</title>
+		<title>Adoção - Remoção</title>
 	</head>
 
   	<body>
@@ -45,36 +45,37 @@
 			<hr>
 
 			<form method="POST" action="#">
-			  <label for="pessoaEscolhida" class="form-label">Escolha qual pessoa você deseja remover do banco de dados: </label>
-			  <select class="form-select" id="pessoaEscolhida" name="pessoaEscolhida">
+			  <label for="compraEscolhida" class="form-label">Escolha qual compra você deseja remover do banco de dados: </label>
+			  <select class="form-select" id="compraEscolhida" name="compraEscolhida">
 				<?php
-					require_once "model/pessoa.php";
-					$pessoas = selecionarTodasPessoas();
-					foreach ($pessoas as $p)
+					require_once "model/compra.php";
+					$adocoes = selecionarTodasCompras();
+					foreach ($compras as $ad)
 					{
-						echo "<option value = $p->id>" . $p->nome . "</option>";	
+						echo "<option value = $ad->id>Livro: " . $ad->anome . " - Leitor: " . $ad->pnome . "</option>";		
 					}
 				?>
 			  </select><br>
-			  <button type="submit" class="btn btn-primary">Remover pessoa </button>
+			  <button type="submit" class="btn btn-primary">Remover compra </button>
 			</form>
 			
 			<?php
-				if (isset($_POST["pessoaEscolhida"]))
+				if (isset($_POST["compraEscolhida"]))
 				{
-					require_once "model/pessoa.php";
-					excluirPessoa($_POST["pessoaEscolhida"]);
-					echo "Pessoa excluída com sucesso do BD!";
-				}
+					require_once "model/compra.php";
+					excluirAdocao($_POST["compraEscolhida"]);
+					echo "Compra excluída com sucesso do BD!";
+				} 
 			?>
 
 			<hr>
 
 			<footer class="bg-primary text-white text-center">
-				<h6>Desenvolvido por: Ana Eliza Feitoza e Raphael Almeida</h6>
-				<p> IFSULDEMINAS </p>
+				<h6>Desenvolvido por: Matheus Guedes Vilas Boas</h6>
+				<p> E-mail: matheus.vilasboas@ifsuldeminas.edu.br </p>
 			</footer>
 		</div>
  
   	</body>
 </html>
+ 
