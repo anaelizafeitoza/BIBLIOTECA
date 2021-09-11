@@ -10,7 +10,7 @@
 		$prepara->execute();	
 	}
 
-	function atualizarLivro ($nome, $preco, $paginas, $descricao, $autor) 
+	function atualizarLivro ($nome, $preco, $paginas, $descricao, $autor, $id) 
     { 
 	      global $conexao;
 	      $prepara = $conexao->prepare("UPDATE livro SET nome = ?, preco = ?, paginas = ?, descricao = ?, autor = ? WHERE id = ?");

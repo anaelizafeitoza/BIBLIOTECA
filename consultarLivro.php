@@ -42,18 +42,33 @@
 
 			<hr>
 
-			<form method="POST" action="consultar_livro_bd.php">
+			<form method="POST" action="#">
 				<label for="livroEscolhido" class="form-label">Escolha qual livro você deseja consultar do banco de dados: </label>
 				<select class="form-select" id="livroEscolhido" name="livroEscolhido">
-					<option> Romeu e Julieta </option>
-					<option> Dom Quixote </option>
-					<option> Diário de um Banana </option>
-					<option> Harry Potter </option>
+				<?php
+						require_once "model/livros.php";
+						$livros = selecionarTodosLivros();
+						foreach ($livros as $a)
+						{
+							echo "<option value = $a->id>" . $a->nome . "</option>";
+						}
+					?>
 				</select><br>
 				<button type="submit" class="btn btn-primary">Consultar dados do livro </button>
 			</form>
 			
-
+			<?php
+				if (isset($_POST["livroEscolhido"]))
+				{
+					require_once "model/livros.php";
+					$livro = selecionarLivroId($_POST["livroEscolhido"]);
+					echo "Nome: " . $livro->nome . "<br>";
+					echo "Preço: " . $livro->preco . "<br>";
+					echo "Páginas: " . $livro->paginas . "<br>";
+					echo "Descrição: " . $livro->descricao . "<br>";
+					echo "Autor: " . $livro->autor . "<br>";
+				}
+				?>
 			<hr>
 
 			<footer class="bg-primary text-white text-center">

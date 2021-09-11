@@ -65,7 +65,7 @@
 							echo "<form method='POST' action='validacao_livros.php'>";
 							echo "<input type='hidden' id='idOculto' name='idOculto' value='$livro->id'>";
 							echo "<label for='name' class='form-label'>Nome do Livro: </label>";
-							echo "<input type='text' class='form-control' id='nome' nome='nome' value = '$livro->nome'>";
+							echo "<input type='text' class='form-control' id='nome' name='nome' value = '$livro->nome'>";
 
 							echo "<label for='preco' class='form-label'> Preço: </label>";
 							echo "<input type='number' class='form-control' id='preco' name='preco' min='0.00' step='0.01' value='$livro->preco'>";
