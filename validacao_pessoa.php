@@ -19,13 +19,13 @@
 			echo "Cadastro efetuado com sucesso! <br>";
 		}
 		echo "Você será redirecionado para a página inicial do sistema.<br>";
-		header ("refresh:5;url=index.html");
+		header ("refresh:5;url=index.php");
 	}
 	else
 	{
 		echo $erros . "<br>";
 		echo "Você será redirecionado para a página de cadastro.<br>";
-		header ("refresh:5;url=cadastrarPessoa.html");
+		header ("refresh:5;url=cadastrarPessoa.php");
 	}
 ?>
 			
