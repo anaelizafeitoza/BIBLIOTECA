@@ -62,35 +62,29 @@
 							require_once "model/livros.php";
 							$livro = selecionarLivroId($_POST["livroEscolhido"]);
 							
+							echo "<form method='POST' action='validacao_livros.php'>";
+							echo "<input type='hidden' id='idOculto' name='idOculto' value='$livro->id'>";
+							echo "<label for='name' class='form-label'>Nome do Livro: </label>";
+							echo "<input type='text' class='form-control' id='nome' nome='nome' value = '$livro->nome'>";
+
+							echo "<label for='preco' class='form-label'> Preço: </label>";
+							echo "<input type='number' class='form-control' id='preco' name='preco' min='0.00' step='0.01' value='$livro->preco'>";
+
+							echo "<label for='paginas' class='form-label'> Páginas: </label>";
+							echo "<input type='number' class='form-control' id='paginas' name='paginas' min='0' value='$livro->paginas'>";
+
+							echo "<label for='descricao' class='form-label'> Descrição: </label>";
+							echo "<textarea class='form-control' id='descricao' name='descricao' rows='5'> $livro->descricao </textarea>";
+							
+							echo "<label for='autor' class='form-label'> Autor: </label>";
+							echo "<textarea class='form-control' id='autor' name='autor' rows='2'>$livro->autor</textarea>";
+							echo "<br>";
+
+							echo "<button type='submit' class='btn btn-primary'> Atualizar Livro </button>";
+						echo"</form>";
 						}
 						
 				?>
-
-						echo "<form method="POST" action="validacao_livros.php">
-							echo "<input type="hidden" id="idOculto" name="idOculto" value="<?php echo $livro->id;?>">";
-							<label for="name" class="form-label">Nome do Livro: </label>
-							<input type="text" class="form-control" id="nome" nome="nome" value = "<?php echo $livro->nome;?>">
-
-							<label for="preco" class="form-label"> Preço: </label>
-							<input type="number" class="form-control" id="preco" name="preco" min="0.00" step="0.01" value="<?php echo $livro->preco;?>">
-
-							<label for="paginas" class="form-label"> Páginas: </label>
-							<input type="number" class="form-control" id="paginas" name="paginas" min="0" value="<?php echo $livro->paginas;?>">
-
-							<label for="descricao" class="form-label"> Descrição: </label>
-							<textarea class="form-control" id="descricao" name="descricao" rows="5"><?php echo $livro->descricao;?></textarea>
-							
-							<label for="autor" class="form-label"> Autor: </label>
-							<textarea class="form-control" id="autor" name="autor" rows="2"><?php echo $livro->autor;?></textarea>
-							<br>
-
-							<button type="submit" class="btn btn-primary"> Atualizar Livro </button>
-						</form>
-
-					
-						
-
-
 			<hr>
 
 			<footer class="bg-primary text-white text-center">

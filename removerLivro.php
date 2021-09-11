@@ -46,7 +46,7 @@
 			  <select class="form-select" id="livroEscolhido" name="livroEscolhido">
 					<?php
 						require_once "model/livros.php";
-						$animais = selecionarTodosLivros();
+						$livros = selecionarTodosLivros();
 						foreach ($livros as $a)
 						{
 							echo "<option value = $a->id>" . $a->nome . "</option>";
@@ -58,10 +58,10 @@
 			<?php
 				if (isset($_POST["livroEscolhido"]))
 				{
-					require_once "model/animal.php";
+					require_once "model/livros.php";
 					excluirLivro($_POST["livroEscolhido"]);
 					echo "Livro excluído com sucesso do BD!";
-					
+
 				}
 			?>
 
