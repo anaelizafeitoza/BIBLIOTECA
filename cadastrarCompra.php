@@ -60,7 +60,7 @@
 			  <select class="form-select" id="livroEscolhido" name="livroEscolhido">
 				<?php
 						require_once "model/livros.php";
-						$animais = selecionarTodosLivros();
+						$livros = selecionarTodosLivros();
 						foreach ($livros as $a)
 						{
 							echo "<option value = $a->id>" . $a->nome . "</option>";

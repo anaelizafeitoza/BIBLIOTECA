@@ -8,7 +8,7 @@
 		$prepara->execute();	
 	}
 
-	function atualizarCompra($idAnimal, $idPessoa, $id)
+	function atualizarCompra($idLivro, $idPessoa, $id)
 	{
 	      global $conexao;
 	      $prepara = $conexao->prepare("UPDATE compra SET idLivro = ?, idPessoa = ? WHERE id = ?");
